@@ -14,14 +14,54 @@ const VIDEOS = [
 ];
 const CAT_LABEL = { live: "Live Performance", studio: "Studio Recording" };
 
-// photo groups: [title, count] — files: assets/photos/g{N}-{01..}.jpg
+// ---------- photos (single Drive-hosted sprite) ----------
+// Sprite: 6 cols x 7 rows of 500x667 cells, in order g1 (6), g2 (25), g3 (8)
+const SPRITE_URL = "https://drive.google.com/thumbnail?id=1vcC4MUENKS63T2dSqEfxWweptsRSuYSB&sz=w3000";
+const SPRITE_COLS = 6, SPRITE_ROWS = 7;
 const PHOTO_GROUPS = [
-  { title: "2026-08-22 @ Quarter Note Bar", group: "g1", count: 6 },
-  { title: "2026-05-29 @ Quarter Note Bar", group: "g2", count: 25 },
-  { title: "2025-12-05 @ Quarter Note Bar", group: "g3", count: 8 },
+  { title: "2026-08-22 @ Quarter Note Bar", start: 0, count: 6 },
+  { title: "2026-05-29 @ Quarter Note Bar", start: 6, count: 25 },
+  { title: "2025-12-05 @ Quarter Note Bar", start: 31, count: 8 },
 ];
 
-const pad = (n) => String(n).padStart(2, "0");
+function spritePos(idx) {
+  const col = idx % SPRITE_COLS, row = Math.floor(idx / SPRITE_COLS);
+  const x = (col / (SPRITE_COLS - 1)) * 100;
+  const y = (row / (SPRITE_ROWS - 1)) * 100;
+  return x.toFixed(2) + "% " + y.toFixed(2) + "%";
+}
+function makeCell(idx) {
+  const d = document.createElement("div");
+  d.className = "photo-cell";
+  d.style.backgroundImage = 'url("' + SPRITE_URL + '")';
+  d.style.backgroundPosition = spritePos(idx);
+  return d;
+}
+
+const groupsEl = document.getElementById("photo-groups");
+const lightboxState = { list: [], index: 0 };
+
+PHOTO_GROUPS.forEach((g) => {
+  const wrap = document.createElement("div");
+  wrap.className = "photo-group";
+  const h = document.createElement("h3");
+  h.textContent = g.title;
+  const pg = document.createElement("div");
+  pg.className = "photo-grid";
+  const list = [];
+  for (let i = 0; i < g.count; i++) {
+    const idx = g.start + i;
+    list.push({ idx, cap: g.title });
+    const cell = makeCell(idx);
+    cell.setAttribute("role", "img");
+    cell.setAttribute("aria-label", g.title + " — photo " + (i + 1));
+    cell.addEventListener("click", () => openLightbox(list, i));
+    pg.appendChild(cell);
+  }
+  wrap.appendChild(h);
+  wrap.appendChild(pg);
+  groupsEl.appendChild(wrap);
+});
 
 /* ---------- tabs ---------- */
 const tabs = document.querySelectorAll(".tab");
@@ -72,33 +112,6 @@ document.querySelectorAll(".filter").forEach((f) =>
 );
 
 /* ---------- photos ---------- */
-const groupsEl = document.getElementById("photo-groups");
-const lightboxState = { list: [], index: 0 };
-
-PHOTO_GROUPS.forEach((g) => {
-  const wrap = document.createElement("div");
-  wrap.className = "photo-group";
-  const h = document.createElement("h3");
-  h.textContent = g.title;
-  const pg = document.createElement("div");
-  pg.className = "photo-grid";
-  const list = [];
-  for (let i = 1; i <= g.count; i++) {
-    const src = "assets/photos/" + g.group + "-" + pad(i) + ".jpg";
-    list.push({ src, cap: g.title });
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = g.title + " — photo " + i;
-    img.loading = "lazy";
-    img.addEventListener("click", () => openLightbox(list, i - 1));
-    img.addEventListener("error", () => { img.style.display = "none"; });
-    pg.appendChild(img);
-  }
-  wrap.appendChild(h);
-  wrap.appendChild(pg);
-  groupsEl.appendChild(wrap);
-});
-
 /* ---------- lightbox ---------- */
 const lb = document.getElementById("lightbox");
 const lbImg = document.getElementById("lb-img");
@@ -113,7 +126,8 @@ function openLightbox(list, i) {
 }
 function renderLb() {
   const item = lightboxState.list[lightboxState.index];
-  lbImg.src = item.src;
+  lbImg.style.backgroundImage = 'url("' + SPRITE_URL + '")';
+  lbImg.style.backgroundPosition = spritePos(item.idx);
   lbCap.textContent = item.cap + " (" + (lightboxState.index + 1) + "/" + lightboxState.list.length + ")";
 }
 function closeLightbox() {
