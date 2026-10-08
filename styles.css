@@ -79,7 +79,7 @@ body {
   position: relative;
 }
 .hero-card .kicker { margin-top: 0; }
-.hero-card .giant { margin: 0.8rem 0; }
+.hero-card .giant { margin: 0.8rem 0; font-weight: 900; }
 .stack { display: flex; flex-direction: column; gap: 0.9rem; margin: 1.6rem 0; }
 
 /* ---------- buttons ---------- */
