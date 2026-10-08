@@ -6,120 +6,131 @@
 <title>Project Idol Band — Bay Area J-Rock / Anime Cover Band</title>
 <meta name="description" content="Project Idol is a Bay Area J-rock / anime-inspired six-member cover band. Watch live videos, browse performance photos, and learn about the band.">
 <link rel="icon" href="https://drive.google.com/thumbnail?id=1c-JHLlxlOB4TjBAqtUHcDc4acbkNoiqQ&sz=w800">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<nav class="topnav">
+<header class="site-head">
   <a class="brand" href="#home" data-tab="home">
     <img src="https://drive.google.com/thumbnail?id=1c-JHLlxlOB4TjBAqtUHcDc4acbkNoiqQ&sz=w800" alt="Project Idol Band logo">
-    <span>PROJECT IDOL</span>
+    <span class="brand-text"><strong>PROJECT IDOL</strong><em>BAY AREA</em></span>
   </a>
-  <div class="tabs">
-    <button class="tab active" data-tab="home">Home</button>
-    <button class="tab" data-tab="videos">Videos</button>
-    <button class="tab" data-tab="photos">Photos</button>
-    <button class="tab" data-tab="about">About Us</button>
-  </div>
-</nav>
+  <nav class="tabs">
+    <button class="tab active" data-tab="home">HOME</button>
+    <button class="tab" data-tab="videos">VIDEOS</button>
+    <button class="tab" data-tab="photos">PHOTOS</button>
+    <button class="tab" data-tab="about">ABOUT US</button>
+  </nav>
+</header>
 
 <!-- ============ HOME ============ -->
 <section id="tab-home" class="tabpanel active">
-  <header class="hero">
-    <div class="hero-inner">
-      <p class="hero-kicker">BAY AREA &middot; J-ROCK / ANIME COVER BAND</p>
-      <h1>PROJECT IDOL</h1>
-      <p class="hero-tag">Six musicians. One masquerade. Your favorite anime anthems, performed live.</p>
-      <div class="hero-ctas">
-        <button class="btn btn-primary" data-goto="videos">Watch Videos</button>
-        <button class="btn btn-ghost" data-goto="photos">View Photos</button>
+  <div class="wrap">
+
+    <div class="hero-card">
+      <div class="hero-inner">
+        <p class="kicker cyan">BAY AREA</p>
+        <h1 class="giant">PROJECT<br>IDOL</h1>
+        <p class="kicker">ANIME &middot; JROCK COVER BAND</p>
+        <div class="stack">
+          <button class="btn-fill" data-goto="home" data-scroll="upcoming">UPCOMING EVENTS <span>&darr;</span></button>
+          <button class="btn-line" data-goto="videos">WATCH VIDEOS <span>&rarr;</span></button>
+          <button class="btn-line" data-goto="photos">VIEW PHOTOS <span>&rarr;</span></button>
+        </div>
       </div>
     </div>
-  </header>
 
-  <div class="section">
-    <h2>Where We&rsquo;ve Played</h2>
-    <ul class="gigs">
-      <li><span class="gig-year">2024</span><span class="gig-venue">Art Boutiki</span></li>
-      <li><span class="gig-year">2024</span><span class="gig-venue">Baylands Park, Sunnyvale</span></li>
-      <li><span class="gig-year">2025&ndash;2026</span><span class="gig-venue">Quarter Note Bar</span></li>
-      <li class="gig-ax"><span class="gig-year">2025</span><span class="gig-venue">Anime Expo Beer Garden &middot; Live band performances (Day 2 &amp; 3)</span></li>
-      <li><span class="gig-year">2025 &amp; 2026</span><span class="gig-venue">Fanime</span></li>
-    </ul>
-  </div>
+    <h2 class="giant">Anime songs,<br><em>alive</em> on<br>stage.</h2>
+    <p class="mono">Project Idol is a Bay Area anime and J-rock cover band built around the songs that brought us together.</p>
+    <p><button class="pill" data-goto="about">Meet the idea behind the band <span>&rarr;</span></button></p>
 
-  <div class="section">
-    <h2>Follow the Band</h2>
-    <div class="social-row">
-      <a class="btn btn-ghost" href="https://www.instagram.com/project.idol.band/" target="_blank" rel="noopener">Instagram @project.idol.band</a>
-      <a class="btn btn-ghost" href="https://www.youtube.com/@Project-Idol-Band" target="_blank" rel="noopener">YouTube @Project-Idol-Band</a>
+    <div id="upcoming">
+      <p class="kicker">UPCOMING EVENTS</p>
+      <h2 class="giant">Next gig<br>stay tuned.</h2>
+      <p class="mono">No date is on the calendar yet. Follow the band for the next live announcement.</p>
+      <p><a class="cyan-link" href="https://www.instagram.com/project.idol.band/" target="_blank" rel="noopener">Follow @project.idol.band <span>&nearr;</span></a></p>
     </div>
-  </div>
 
-  <footer>
-    <p>&copy; 2026 Project Idol Band &middot; Bay Area, California</p>
-  </footer>
+    <p class="kicker magenta">WHERE WE&rsquo;VE PLAYED</p>
+    <ul class="gigs">
+      <li><span class="gig-year">2024</span><strong>Art Boutiki</strong><span class="gig-sub">Live band performance</span></li>
+      <li><span class="gig-year">2024</span><strong>Baylands Park, Sunnyvale</strong><span class="gig-sub">Live band performance</span></li>
+      <li><span class="gig-year">2025&ndash;2026</span><strong>Quarter Note Bar</strong><span class="gig-sub">Live band performances</span></li>
+      <li class="gig-ax"><span class="gig-year">2025</span><strong>Anime Expo Beer Garden</strong><span class="gig-sub">Live band performances (Day 2 &amp; 3)</span></li>
+      <li><span class="gig-year">2025 &amp; 2026</span><strong>Fanime</strong><span class="gig-sub">Live band performances</span></li>
+    </ul>
+
+    <div class="stack">
+      <a class="btn-line" href="https://www.instagram.com/project.idol.band/" target="_blank" rel="noopener">INSTAGRAM @PROJECT.IDOL.BAND <span>&nearr;</span></a>
+      <a class="btn-line" href="https://www.youtube.com/@Project-Idol-Band" target="_blank" rel="noopener">YOUTUBE @PROJECT-IDOL-BAND <span>&nearr;</span></a>
+    </div>
+
+  </div>
+  <footer><p>&copy; 2026 Project Idol Band &middot; Bay Area, California</p></footer>
 </section>
 
 <!-- ============ VIDEOS ============ -->
 <section id="tab-videos" class="tabpanel">
-  <div class="section">
-    <h2>Videos</h2>
-    <a class="btn btn-primary yt-top" href="https://www.youtube.com/@Project-Idol-Band" target="_blank" rel="noopener">Watch on YouTube @Project-Idol-Band</a>
-    <div class="filters">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="live">Live Performance</button>
-      <button class="filter" data-filter="studio">Studio Recording</button>
+  <div class="wrap">
+    <p class="kicker">PROJECT IDOL ON FILM</p>
+    <h2 class="giant">Turn it <em>up.</em></h2>
+    <p class="mono">Live stage recordings and studio covers from our official YouTube channel.</p>
+    <div class="stack">
+      <a class="btn-fill" href="https://www.youtube.com/@Project-Idol-Band" target="_blank" rel="noopener">WATCH ON YOUTUBE @PROJECT-IDOL-BAND <span>&nearr;</span></a>
     </div>
-    <div class="video-grid" id="video-grid"><!-- cards injected by app.js --></div>
+    <div class="stack filters">
+      <button class="filter active" data-filter="all">ALL</button>
+      <button class="filter btn-line" data-filter="live">LIVE PERFORMANCE</button>
+      <button class="filter btn-line" data-filter="studio">STUDIO RECORDING</button>
+    </div>
+    <div class="video-grid" id="video-grid"></div>
   </div>
-  <footer>
-    <p>&copy; 2026 Project Idol Band &middot; Bay Area, California</p>
-  </footer>
+  <footer><p>&copy; 2026 Project Idol Band &middot; Bay Area, California</p></footer>
 </section>
 
 <!-- ============ PHOTOS ============ -->
 <section id="tab-photos" class="tabpanel">
-  <div class="section">
-    <h2>Photos</h2>
-    <div id="photo-groups"><!-- groups injected by app.js --></div>
-    <div class="social-row">
-      <a class="btn btn-ghost" href="https://www.instagram.com/project.idol.band/" target="_blank" rel="noopener">Follow on Instagram</a>
+  <div class="wrap">
+    <p class="kicker">FROM THE STAGE</p>
+    <h2 class="giant">Live in <em>frame.</em></h2>
+    <div id="photo-groups"></div>
+    <div class="stack">
+      <a class="btn-line" href="https://www.instagram.com/project.idol.band/" target="_blank" rel="noopener">FOLLOW ON INSTAGRAM <span>&nearr;</span></a>
     </div>
   </div>
-  <footer>
-    <p>&copy; 2026 Project Idol Band &middot; Bay Area, California</p>
-  </footer>
+  <footer><p>&copy; 2026 Project Idol Band &middot; Bay Area, California</p></footer>
 </section>
 
 <!-- ============ ABOUT ============ -->
 <section id="tab-about" class="tabpanel">
-  <div class="section narrow">
-    <h2>About Us</h2>
+  <div class="wrap">
+    <p class="kicker">WHO ARE WE</p>
+    <h2 class="giant">The music,<br><em>unmasked.</em></h2>
+    <div class="rule"></div>
+    <h2 class="giant">One stage.<br><em>Shared</em><br>passion.</h2>
 
-    <h3>Who We Are</h3>
-    <p>Project Idol is a Bay Area J-rock / anime-inspired six-member band: vocals, two guitars, bass, keyboard, and drums. Our name comes from YOASOBI&rsquo;s &ldquo;Idol&rdquo; (<i>Oshi no Ko</i>) &mdash; and along the way, Ave Mujica and the world of <i>BanG Dream!</i> became a deeper shared anthem for us.</p>
+    <p class="kicker magenta">WHO WE ARE</p>
+    <p class="mono">Project Idol is a Bay Area J-rock / anime-inspired six-member band: vocals, two guitars, bass, keyboard, and drums. Our name comes from YOASOBI&rsquo;s &ldquo;Idol&rdquo; (<i>Oshi no Ko</i>) &mdash; and along the way, Ave Mujica and the world of <i>BanG Dream!</i> became a deeper shared anthem for us.</p>
 
-    <h3>The Masquerade</h3>
-    <p>At Anime Expo 2025, we took the stage under a concept we call the <em>masquerade</em>: masks and unified personas, stripping away our individual identities so that nothing stood between the audience and the music.</p>
+    <p class="kicker magenta">THE MASQUERADE</p>
+    <p class="mono">At Anime Expo 2025, we took the stage under a concept we call the <i>masquerade</i>: masks and unified personas, stripping away our individual identities so that nothing stood between the audience and the music.</p>
 
-    <h3>Removing the Masquerade</h3>
-    <p>Now we are removing the masquerade &mdash; a symbol of our growth as a band. What remains is sincerity and authenticity: six musicians, no masks, and a deeper connection with everyone in the room.</p>
+    <p class="kicker magenta">REMOVING THE MASQUERADE</p>
+    <p class="mono">Now we are removing the masquerade &mdash; a symbol of our growth as a band. What remains is sincerity and authenticity: six musicians, no masks, and a deeper connection with everyone in the room.</p>
 
-    <h3>What We Play</h3>
-    <p>Our setlists span the songs that shaped us, including Ado, Ave Mujica, MyGO!!!!!, Kessoku Band, ZUTOMAYO, and Togenashi Togeari &mdash; performed live, with full-band energy.</p>
+    <p class="kicker magenta">WHAT WE PLAY</p>
+    <p class="mono">Our setlists span the songs that shaped us, including Ado, Ave Mujica, MyGO!!!!!, Kessoku Band, ZUTOMAYO, and Togenashi Togeari &mdash; performed live, with full-band energy.</p>
 
-    <h3>Contact</h3>
-    <ul class="contact-list">
-      <li>Email: <a href="mailto:project.idol.band@gmail.com">project.idol.band@gmail.com</a></li>
-      <li>Instagram: <a href="https://www.instagram.com/project.idol.band/" target="_blank" rel="noopener">@project.idol.band</a></li>
-      <li>YouTube: <a href="https://www.youtube.com/@Project-Idol-Band" target="_blank" rel="noopener">@Project-Idol-Band</a></li>
-    </ul>
-    <p class="booking-note">For bookings and collabs, reach out by email or DM.</p>
+    <p class="kicker magenta">CONTACT</p>
+    <p class="mono">Email: <a class="cyan-link" href="mailto:project.idol.band@gmail.com">project.idol.band@gmail.com</a><br>
+    Instagram: <a class="cyan-link" href="https://www.instagram.com/project.idol.band/" target="_blank" rel="noopener">@project.idol.band</a><br>
+    YouTube: <a class="cyan-link" href="https://www.youtube.com/@Project-Idol-Band" target="_blank" rel="noopener">@Project-Idol-Band</a></p>
+    <p class="mono dim">For bookings and collabs, reach out by email or DM.</p>
   </div>
-  <footer>
-    <p>&copy; 2026 Project Idol Band &middot; Bay Area, California</p>
-  </footer>
+  <footer><p>&copy; 2026 Project Idol Band &middot; Bay Area, California</p></footer>
 </section>
 
 <!-- lightbox -->

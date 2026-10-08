@@ -78,7 +78,15 @@ function showTab(name) {
 }
 tabs.forEach((t) => t.addEventListener("click", () => showTab(t.dataset.tab)));
 document.querySelectorAll("[data-goto]").forEach((b) =>
-  b.addEventListener("click", () => showTab(b.dataset.goto))
+  b.addEventListener("click", () => {
+    showTab(b.dataset.goto);
+    if (b.dataset.scroll) {
+      setTimeout(() => {
+        const el = document.getElementById(b.dataset.scroll);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 60);
+    }
+  })
 );
 document.querySelector(".brand").addEventListener("click", (e) => {
   e.preventDefault();
