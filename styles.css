@@ -51,7 +51,7 @@ body {
   min-height: 88vh;
   display: flex; align-items: center; justify-content: center;
   text-align: center; padding: 3rem 1.25rem;
-  background: url("assets/home-bg.jpg") center / cover no-repeat, var(--bg);
+  background: url("https://drive.google.com/thumbnail?id=1nsDhu6Yleo5YsLDm1c-PWADE0i28a6hs&sz=w1600") center / cover no-repeat, var(--bg);
   position: relative;
 }
 .hero::before {
