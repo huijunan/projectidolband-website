@@ -50,7 +50,7 @@ body {
 /* ---------- type ---------- */
 .giant {
   font-family: var(--serif); font-weight: 700;
-  font-size: clamp(2.4rem, 13vw, 3.6rem);
+  font-size: clamp(2rem, 11vw, 3rem);
   line-height: 1.02; letter-spacing: 0.01em;
   margin: 1.2rem 0 1.4rem;
 }
@@ -79,7 +79,8 @@ body {
   position: relative;
 }
 .hero-card .kicker { margin-top: 0; }
-.hero-card .giant { margin: 0.8rem 0; font-weight: 900; }
+.hero-card .giant { margin: 0.8rem 0; font-weight: 900; font-size: clamp(2.4rem, 13vw, 3.6rem); }
+.kicker-lg { font-size: 1rem; letter-spacing: 0.26em; }
 .stack { display: flex; flex-direction: column; gap: 0.9rem; margin: 1.6rem 0; }
 
 /* ---------- buttons ---------- */
