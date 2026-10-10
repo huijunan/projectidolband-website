@@ -108,9 +108,9 @@ body {
 /* ---------- gigs ---------- */
 .gigs { list-style: none; margin: 0.6rem 0 2rem; }
 .gigs li { padding: 1.3rem 0; border-top: 1px solid var(--line); }
-.gig-year { display: block; color: var(--cyan); font-size: 0.85rem; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
-.gigs strong { display: block; font-size: 1.25rem; letter-spacing: 0.02em; }
-.gig-sub { display: block; color: var(--muted); font-size: 0.92rem; margin-top: 0.2rem; }
+.gig-year { display: block; color: var(--cyan); font-size: 0.75rem; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+.gigs strong { display: block; font-size: 1.08rem; letter-spacing: 0.02em; }
+.gig-sub { display: block; color: var(--muted); font-size: 0.82rem; margin-top: 0.2rem; }
 .gig-ax strong { color: #fff; }
 
 /* ---------- videos ---------- */
