@@ -5,6 +5,8 @@ footer { position: relative; }
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
+  /* unify with the site's purple tone */
+  --tint: sepia(0.4) saturate(1.8) hue-rotate(265deg) brightness(0.85);
 }
 /* little heads peeking over every footer — small and low */
 .chibi-peek {
@@ -12,7 +14,7 @@ footer { position: relative; }
   height: 44px;
   width: auto;
   z-index: 5;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
+  filter: var(--tint) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
   animation: chibi-bob 5s ease-in-out infinite;
 }
 @keyframes chibi-bob {
@@ -21,13 +23,13 @@ footer { position: relative; }
 }
 /* quiet companion in the site header, above the ABOUT US tab */
 .chibi-nav {
-  top: 8px;
+  top: 16px;
   right: 10px;
-  height: 46px;
+  height: 44px;
   width: auto;
   z-index: 51;
   opacity: 0.95;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
+  filter: var(--tint) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
 }
 /* quiet companion at the top of the about page, by the headline */
 #tab-about .wrap { position: relative; }
@@ -38,5 +40,5 @@ footer { position: relative; }
   width: auto;
   z-index: 5;
   opacity: 0.95;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  filter: var(--tint) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
 }
