@@ -161,10 +161,10 @@ document.addEventListener("keydown", (e) => {
 /* chibi decorations — subtle, randomized per visit */
 (function () {
   const CHIBI = {
-    play: "https://drive.google.com/uc?export=download&id=19UQ2YQYMEvR4AwICtFhTwugjEPcOGnT5",
-    peek: "https://drive.google.com/uc?export=download&id=1VlaKIYlCkm82NnNdBFkHHTGaMsdub5RF",
-    sit: "https://drive.google.com/uc?export=download&id=1WKR3mIoMig_S0Rkowv4k61OnaDfwkvrK",
-    group: "https://drive.google.com/uc?export=download&id=1E6RwnvU5KbBPMsajTTPFhKQNddN4yOgh",
+    play: "https://drive.google.com/thumbnail?id=19UQ2YQYMEvR4AwICtFhTwugjEPcOGnT5&sz=w640",
+    peek: "https://drive.google.com/thumbnail?id=1VlaKIYlCkm82NnNdBFkHHTGaMsdub5RF&sz=w640",
+    sit: "https://drive.google.com/thumbnail?id=1WKR3mIoMig_S0Rkowv4k61OnaDfwkvrK&sz=w640",
+    group: "https://drive.google.com/thumbnail?id=1E6RwnvU5KbBPMsajTTPFhKQNddN4yOgh&sz=w640",
   };
   const rnd = (a, b) => a + Math.random() * (b - a);
   const pick = (arr) => arr[(Math.random() * arr.length) | 0];
