@@ -6,9 +6,10 @@ footer { position: relative; }
   user-select: none;
   -webkit-user-drag: none;
 }
+/* little heads peeking over every footer — small and low */
 .chibi-peek {
-  bottom: calc(100% - 12px);
-  height: 58px;
+  bottom: calc(100% - 8px);
+  height: 44px;
   width: auto;
   z-index: 5;
   filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
@@ -16,22 +17,24 @@ footer { position: relative; }
 }
 @keyframes chibi-bob {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-4px); }
 }
-.hero-card .chibi-corner {
-  top: 10px;
-  right: 8px;
-  height: 74px;
+/* quiet companion in the site header, above the ABOUT US tab */
+.chibi-nav {
+  top: 8px;
+  right: 10px;
+  height: 46px;
   width: auto;
-  z-index: 6;
+  z-index: 51;
   opacity: 0.95;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
 }
+/* quiet companion at the top of the about page, by the headline */
 #tab-about .wrap { position: relative; }
 .chibi-about {
-  right: 4px;
-  bottom: 96px;
-  height: 86px;
+  top: 72px;
+  right: 8px;
+  height: 64px;
   width: auto;
   z-index: 5;
   opacity: 0.95;

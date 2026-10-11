@@ -184,14 +184,10 @@ document.addEventListener("keydown", (e) => {
     p.style.animationDelay = rnd(0, 5).toFixed(2) + "s";
     f.appendChild(p);
   });
-  // a quiet companion in the home hero corner
-  const hero = document.querySelector(".hero-card");
-  if (hero) {
-    const c = mk(pick(["play", "sit", "group"]), "chibi-corner");
-    c.style.transform = "rotate(" + rnd(-9, 9).toFixed(1) + "deg)";
-    hero.appendChild(c);
-  }
-  // a quiet companion near the contact section
+  // quiet companion in the header, above the ABOUT US tab
+  const head = document.querySelector(".site-head");
+  if (head) head.appendChild(mk(pick(["play", "sit", "group"]), "chibi-nav"));
+  // quiet companion at the top of the about page, by the headline
   const aboutWrap = document.querySelector("#tab-about .wrap");
   if (aboutWrap) {
     const c = mk(pick(["play", "sit", "group"]), "chibi-about");
