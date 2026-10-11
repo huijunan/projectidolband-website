@@ -24,7 +24,7 @@ footer { position: relative; }
 /* quiet companion in the site header, above the ABOUT US tab */
 .chibi-nav {
   top: 16px;
-  right: 10px;
+  right: 27px;
   height: 44px;
   width: auto;
   z-index: 51;
