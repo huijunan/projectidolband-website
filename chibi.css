@@ -5,8 +5,8 @@ footer { position: relative; }
   pointer-events: none;
   user-select: none;
   -webkit-user-drag: none;
-  /* unify with the site's purple tone */
-  --tint: sepia(0.4) saturate(1.8) hue-rotate(265deg) brightness(0.85);
+  /* unify with the site's purple tone — kept light */
+  --tint: sepia(0.22) saturate(1.35) hue-rotate(265deg) brightness(0.92);
 }
 /* little heads peeking over every footer — small and low */
 .chibi-peek {
@@ -30,15 +30,4 @@ footer { position: relative; }
   z-index: 51;
   opacity: 0.95;
   filter: var(--tint) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
-}
-/* quiet companion at the top of the about page, by the headline */
-#tab-about .wrap { position: relative; }
-.chibi-about {
-  top: 72px;
-  right: 8px;
-  height: 64px;
-  width: auto;
-  z-index: 5;
-  opacity: 0.95;
-  filter: var(--tint) drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
 }

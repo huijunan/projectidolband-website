@@ -187,11 +187,4 @@ document.addEventListener("keydown", (e) => {
   // quiet companion in the header, above the ABOUT US tab
   const head = document.querySelector(".site-head");
   if (head) head.appendChild(mk(pick(["play", "sit", "group"]), "chibi-nav"));
-  // quiet companion at the top of the about page, by the headline
-  const aboutWrap = document.querySelector("#tab-about .wrap");
-  if (aboutWrap) {
-    const c = mk(pick(["play", "sit", "group"]), "chibi-about");
-    c.style.transform = "rotate(" + rnd(-7, 7).toFixed(1) + "deg)";
-    aboutWrap.appendChild(c);
-  }
 })();
