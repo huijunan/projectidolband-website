@@ -157,3 +157,45 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") stepLb(-1);
   if (e.key === "ArrowRight") stepLb(1);
 });
+
+/* chibi decorations — subtle, randomized per visit */
+(function () {
+  const CHIBI = {
+    play: "https://drive.google.com/uc?export=download&id=19UQ2YQYMEvR4AwICtFhTwugjEPcOGnT5",
+    peek: "https://drive.google.com/uc?export=download&id=1VlaKIYlCkm82NnNdBFkHHTGaMsdub5RF",
+    sit: "https://drive.google.com/uc?export=download&id=1WKR3mIoMig_S0Rkowv4k61OnaDfwkvrK",
+    group: "https://drive.google.com/uc?export=download&id=1E6RwnvU5KbBPMsajTTPFhKQNddN4yOgh",
+  };
+  const rnd = (a, b) => a + Math.random() * (b - a);
+  const pick = (arr) => arr[(Math.random() * arr.length) | 0];
+  function mk(kind, cls) {
+    const img = document.createElement("img");
+    img.src = CHIBI[kind];
+    img.alt = "";
+    img.setAttribute("aria-hidden", "true");
+    img.className = "chibi " + cls;
+    img.loading = "lazy";
+    return img;
+  }
+  // little heads peeking over every footer
+  document.querySelectorAll("footer").forEach((f) => {
+    const p = mk("peek", "chibi-peek");
+    p.style.left = rnd(6, 62).toFixed(1) + "%";
+    p.style.animationDelay = rnd(0, 5).toFixed(2) + "s";
+    f.appendChild(p);
+  });
+  // a quiet companion in the home hero corner
+  const hero = document.querySelector(".hero-card");
+  if (hero) {
+    const c = mk(pick(["play", "sit", "group"]), "chibi-corner");
+    c.style.transform = "rotate(" + rnd(-9, 9).toFixed(1) + "deg)";
+    hero.appendChild(c);
+  }
+  // a quiet companion near the contact section
+  const aboutWrap = document.querySelector("#tab-about .wrap");
+  if (aboutWrap) {
+    const c = mk(pick(["play", "sit", "group"]), "chibi-about");
+    c.style.transform = "rotate(" + rnd(-7, 7).toFixed(1) + "deg)";
+    aboutWrap.appendChild(c);
+  }
+})();
