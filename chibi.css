@@ -8,10 +8,10 @@ footer { position: relative; }
   /* unify with the site's purple tone — kept light */
   --tint: sepia(0.22) saturate(1.35) hue-rotate(265deg) brightness(0.92);
 }
-/* little heads peeking over every footer — small and low */
+/* little heads peeking over every footer — small and low, never covering text */
 .chibi-peek {
-  bottom: calc(100% - 8px);
-  height: 44px;
+  bottom: calc(100% - 22px);
+  height: 34px;
   width: auto;
   z-index: 5;
   filter: var(--tint) drop-shadow(0 3px 8px rgba(0, 0, 0, 0.45));
