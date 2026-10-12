@@ -14,27 +14,38 @@ const VIDEOS = [
 ];
 const CAT_LABEL = { live: "Live Performance", studio: "Studio Recording" };
 
-// ---------- photos (single Drive-hosted sprite) ----------
-// Sprite: 6 cols x 7 rows of 500x667 cells, in order g1 (6), g2 (25), g3 (8)
-const SPRITE_URL = "https://drive.google.com/thumbnail?id=1vcC4MUENKS63T2dSqEfxWweptsRSuYSB&sz=w3000";
-const SPRITE_COLS = 6, SPRITE_ROWS = 7;
+// ---------- photos (Drive-hosted sprites) ----------
+// Main sprite: 6 cols x 7 rows of 500x667 cells, in order g1 (6), g2 (25), g3 (8)
+// AX2025 sprite: 5 cols x 6 rows of 600x600 cells, 30 photos
+const SPRITES = {
+  main: {
+    url: "https://drive.google.com/thumbnail?id=1vcC4MUENKS63T2dSqEfxWweptsRSuYSB&sz=w3000",
+    cols: 6, rows: 7,
+  },
+  ax2025: {
+    url: "https://drive.google.com/thumbnail?id=1evnnjE6KZFtmvg8-p9zcecXYQst5Mph9&sz=w3000",
+    cols: 5, rows: 6,
+  },
+};
 const PHOTO_GROUPS = [
-  { title: "2026-08-22 @ Quarter Note Bar", start: 0, count: 6 },
-  { title: "2026-05-29 @ Quarter Note Bar", start: 6, count: 25 },
-  { title: "2025-12-05 @ Quarter Note Bar", start: 31, count: 8 },
+  { title: "2026-08-22 @ Quarter Note Bar", sprite: "main", start: 0, count: 6 },
+  { title: "2026-05-29 @ Quarter Note Bar", sprite: "main", start: 6, count: 25 },
+  { title: "2025-12-05 @ Quarter Note Bar", sprite: "main", start: 31, count: 8 },
+  { title: "2025-07 @ Anime Expo", sprite: "ax2025", start: 0, count: 30 },
 ];
 
-function spritePos(idx) {
-  const col = idx % SPRITE_COLS, row = Math.floor(idx / SPRITE_COLS);
-  const x = (col / (SPRITE_COLS - 1)) * 100;
-  const y = (row / (SPRITE_ROWS - 1)) * 100;
+function spritePos(sp, idx) {
+  const col = idx % sp.cols, row = Math.floor(idx / sp.cols);
+  const x = (col / (sp.cols - 1)) * 100;
+  const y = (row / (sp.rows - 1)) * 100;
   return x.toFixed(2) + "% " + y.toFixed(2) + "%";
 }
-function makeCell(idx) {
+function makeCell(spriteKey, idx) {
+  const sp = SPRITES[spriteKey];
   const d = document.createElement("div");
   d.className = "photo-cell";
-  d.style.backgroundImage = 'url("' + SPRITE_URL + '")';
-  d.style.backgroundPosition = spritePos(idx);
+  d.style.backgroundImage = 'url("' + sp.url + '")';
+  d.style.backgroundPosition = spritePos(sp, idx);
   return d;
 }
 
@@ -51,8 +62,8 @@ PHOTO_GROUPS.forEach((g) => {
   const list = [];
   for (let i = 0; i < g.count; i++) {
     const idx = g.start + i;
-    list.push({ idx, cap: g.title });
-    const cell = makeCell(idx);
+    list.push({ sprite: g.sprite, idx, cap: g.title });
+    const cell = makeCell(g.sprite, idx);
     cell.setAttribute("role", "img");
     cell.setAttribute("aria-label", g.title + " — photo " + (i + 1));
     cell.addEventListener("click", () => openLightbox(list, i));
@@ -134,8 +145,9 @@ function openLightbox(list, i) {
 }
 function renderLb() {
   const item = lightboxState.list[lightboxState.index];
-  lbImg.style.backgroundImage = 'url("' + SPRITE_URL + '")';
-  lbImg.style.backgroundPosition = spritePos(item.idx);
+  const sp = SPRITES[item.sprite];
+  lbImg.style.backgroundImage = 'url("' + sp.url + '")';
+  lbImg.style.backgroundPosition = spritePos(sp, item.idx);
   lbCap.textContent = item.cap + " (" + (lightboxState.index + 1) + "/" + lightboxState.list.length + ")";
 }
 function closeLightbox() {
