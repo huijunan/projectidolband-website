@@ -1,3 +1,6 @@
+/* hero background: show the upper part of the collage (faces, not legs) */
+.hero-card { background-position: center 25%; }
+
 /* desktop layout — wide screens get a real layout, not a stretched phone */
 @media (min-width: 900px) {
   .wrap { max-width: 1120px; padding: 0 2.5rem; }
@@ -49,8 +52,10 @@
   /* photos: more columns */
   .photo-grid { grid-template-columns: repeat(5, 1fr); }
 
-  /* nav chibi: peek from behind the header's bottom edge */
-  .chibi-nav { top: auto; bottom: -14px; right: 48px; height: 38px; }
+  /* nav chibi: hang below the header, aligned with the ABOUT US tab
+     (JS fine-tunes the horizontal offset) */
+  .head-inner { position: relative; }
+  .chibi-nav { top: auto; bottom: -18px; right: 40px; height: 42px; }
 
   /* about: comfortable measure */
   #tab-about .wrap { max-width: 860px; }

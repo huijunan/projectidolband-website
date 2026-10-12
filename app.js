@@ -184,7 +184,21 @@ document.addEventListener("keydown", (e) => {
     p.style.animationDelay = rnd(0, 5).toFixed(2) + "s";
     f.appendChild(p);
   });
-  // quiet companion in the header, above the ABOUT US tab
-  const head = document.querySelector(".site-head");
-  if (head) head.appendChild(mk(pick(["play", "sit", "group"]), "chibi-nav"));
+  // quiet companion in the header, aligned with the ABOUT US tab
+  const headInner = document.querySelector(".head-inner");
+  const navHost = headInner || document.querySelector(".site-head");
+  if (navHost) {
+    const c = mk(pick(["play", "sit", "group"]), "chibi-nav");
+    navHost.appendChild(c);
+    if (headInner && window.matchMedia("(min-width: 900px)").matches) {
+      const aboutTab = document.querySelector('.tab[data-tab="about"]');
+      if (aboutTab) {
+        const range = document.createRange();
+        range.selectNodeContents(aboutTab);
+        const textRect = range.getBoundingClientRect();
+        const innerRect = headInner.getBoundingClientRect();
+        c.style.right = Math.max(0, innerRect.right - textRect.right).toFixed(1) + "px";
+      }
+    }
+  }
 })();
