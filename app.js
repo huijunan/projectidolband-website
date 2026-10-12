@@ -23,7 +23,7 @@ const SPRITES = {
     cols: 6, rows: 7,
   },
   ax2025: {
-    url: "https://drive.google.com/thumbnail?id=1PlC6St93frG0JATXw9PkanfjYS6UotId&sz=w2500",
+    url: "https://drive.google.com/thumbnail?id=1CyU5r0Dvm916YGI-5byFZeO7VCYjAV7q&sz=w2500",
     cols: 5, rows: 6,
   },
 };
@@ -31,7 +31,7 @@ const PHOTO_GROUPS = [
   { title: "2026-08-22 @ Quarter Note Bar", sprite: "main", start: 0, count: 6 },
   { title: "2026-05-29 @ Quarter Note Bar", sprite: "main", start: 6, count: 25 },
   { title: "2025-12-05 @ Quarter Note Bar", sprite: "main", start: 31, count: 8 },
-  { title: "2025-07 @ Anime Expo", sprite: "ax2025", start: 0, count: 30 },
+  { title: "2025-07 @ Anime Expo", sprite: "ax2025", start: 0, count: 28 },
 ];
 
 function spritePos(sp, idx) {
