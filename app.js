@@ -23,7 +23,7 @@ const SPRITES = {
     cols: 6, rows: 7,
   },
   ax2025: {
-    url: "https://drive.google.com/thumbnail?id=1evnnjE6KZFtmvg8-p9zcecXYQst5Mph9&sz=w3000",
+    url: "https://drive.google.com/thumbnail?id=1PlC6St93frG0JATXw9PkanfjYS6UotId&sz=w2500",
     cols: 5, rows: 6,
   },
 };
@@ -45,6 +45,7 @@ function makeCell(spriteKey, idx) {
   const d = document.createElement("div");
   d.className = "photo-cell";
   d.style.backgroundImage = 'url("' + sp.url + '")';
+  d.style.backgroundSize = (sp.cols * 100) + "% " + (sp.rows * 100) + "%";
   d.style.backgroundPosition = spritePos(sp, idx);
   return d;
 }
@@ -147,6 +148,7 @@ function renderLb() {
   const item = lightboxState.list[lightboxState.index];
   const sp = SPRITES[item.sprite];
   lbImg.style.backgroundImage = 'url("' + sp.url + '")';
+  lbImg.style.backgroundSize = (sp.cols * 100) + "% " + (sp.rows * 100) + "%";
   lbImg.style.backgroundPosition = spritePos(sp, item.idx);
   lbCap.textContent = item.cap + " (" + (lightboxState.index + 1) + "/" + lightboxState.list.length + ")";
 }
