@@ -1,6 +1,9 @@
 /* hero background: show the upper part of the collage (faces, not legs) */
 .hero-card { background-position: center 25%; }
 
+/* sub-headlines: one size smaller than .giant */
+.giant-sub { font-size: clamp(1.6rem, 8.5vw, 2.4rem); }
+
 /* desktop layout — wide screens get a real layout, not a stretched phone */
 @media (min-width: 900px) {
   .wrap { max-width: 1120px; padding: 0 2.5rem; }
@@ -28,6 +31,7 @@
 
   /* type scale up */
   .giant { font-size: clamp(2.6rem, 5vw, 4.4rem); }
+  .giant-sub { font-size: clamp(2rem, 4vw, 3.4rem); }
   .hero-card .giant { font-size: clamp(3.2rem, 8vw, 6.5rem); }
 
   /* hero: wider card, buttons in a row */
