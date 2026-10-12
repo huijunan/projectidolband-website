@@ -8,9 +8,10 @@ footer { position: relative; }
   /* unify with the site's purple tone — kept light */
   --tint: sepia(0.22) saturate(1.35) hue-rotate(265deg) brightness(0.92);
 }
-/* little heads peeking over every footer — small and low, never covering text */
+/* little heads sitting below the copyright line */
+footer { position: relative; padding-bottom: 3.4rem; }
 .chibi-peek {
-  bottom: calc(100% - 22px);
+  bottom: 10px;
   height: 34px;
   width: auto;
   z-index: 5;
