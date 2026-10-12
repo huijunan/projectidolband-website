@@ -11,10 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="chibi.css">
+<link rel="stylesheet" href="desktop.css">
 </head>
 <body>
 
 <header class="site-head">
+ <div class="head-inner">
   <a class="brand" href="#home" data-tab="home">
     <img src="https://drive.google.com/thumbnail?id=1c-JHLlxlOB4TjBAqtUHcDc4acbkNoiqQ&sz=w800" alt="Project Idol Band logo">
     <span class="brand-text"><strong>PROJECT IDOL</strong><em>BAY AREA</em></span>
@@ -25,6 +27,7 @@
     <button class="tab" data-tab="photos">PHOTOS</button>
     <button class="tab" data-tab="about">ABOUT US</button>
   </nav>
+ </div>
 </header>
 
 <!-- ============ HOME ============ -->
@@ -44,9 +47,13 @@
       </div>
     </div>
 
-    <h2 class="giant">Anime songs,<br><em>alive</em> on<br>stage.</h2>
-    <p class="mono">Project Idol is a Bay Area anime and J-rock cover band built around the songs that brought us together.</p>
-    <p><button class="pill" data-goto="about">Meet the idea behind the band <span>&rarr;</span></button></p>
+    <div class="intro-grid">
+      <h2 class="giant">Anime songs,<br><em>alive</em> on<br>stage.</h2>
+      <div>
+        <p class="mono">Project Idol is a Bay Area anime and J-rock cover band built around the songs that brought us together.</p>
+        <p><button class="pill" data-goto="about">Meet the idea behind the band <span>&rarr;</span></button></p>
+      </div>
+    </div>
 
     <div id="upcoming">
       <p class="kicker">UPCOMING EVENTS</p>

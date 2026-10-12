@@ -1,0 +1,57 @@
+/* desktop layout — wide screens get a real layout, not a stretched phone */
+@media (min-width: 900px) {
+  .wrap { max-width: 1120px; padding: 0 2.5rem; }
+
+  /* header: single row */
+  .site-head { padding: 0.9rem 0 0; }
+  .head-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tabs { margin-top: 0; gap: 2.4rem; }
+  .tab { flex: none; padding: 1.1rem 0; font-size: 0.85rem; }
+
+  /* type scale up */
+  .giant { font-size: clamp(2.6rem, 5vw, 4.4rem); }
+  .hero-card .giant { font-size: clamp(3.2rem, 8vw, 6.5rem); }
+
+  /* hero: wider card, buttons in a row */
+  .hero-card { padding: 4.5rem 3rem 2.8rem; }
+  .hero-card .stack {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* home intro: two columns */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin: 3.5rem 0;
+  }
+  .intro-grid .giant { margin: 0; }
+
+  /* gigs: two columns */
+  .gigs { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; }
+
+  /* videos: two columns */
+  .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+
+  /* photos: more columns */
+  .photo-grid { grid-template-columns: repeat(5, 1fr); }
+
+  /* nav chibi: peek from behind the header's bottom edge */
+  .chibi-nav { top: auto; bottom: -14px; right: 48px; height: 38px; }
+
+  /* about: comfortable measure */
+  #tab-about .wrap { max-width: 860px; }
+}
